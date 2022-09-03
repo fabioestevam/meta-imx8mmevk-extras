@@ -10,11 +10,11 @@ Dependencies
 This layer depends on:
 
 * URI: git://git.yoctoproject.org/poky
-  - branch: dunfell
+  - branch: kirkstone
   - layers: meta
 
 * meta-imx8mmevk-bsp
-  - branch: dunfell
+  - branch: kirkstone
 
 Building image
 --------------
@@ -29,15 +29,15 @@ be cloned into a location accessible to the build system and a branch listed
 below shall be checked out. The examples below will use /path/to/OE/ as a
 location of the metalayers.
 
-* git://git.yoctoproject.org/poky					(branch: dunfell)
+* git://git.yoctoproject.org/poky					(branch: kirkstone)
 * https://source.denx.de/denx/meta-mainline-common.git		(branch: dunfell-3.1)
-* https://github.com/sbabic/meta-swupdate.git				(branch: dunfell)
-* https://github.com/fabioestevam/meta-imx8mmevk-bsp.git		(branch: dunfell)
-* https://github.com/fabioestevam/meta-imx8mmevk-extras.git		(branch: dunfell)
+* https://github.com/sbabic/meta-swupdate.git				(branch: kirkstone)
+* https://github.com/fabioestevam/meta-imx8mmevk-bsp.git		(branch: kirkstone)
+* https://github.com/fabioestevam/meta-imx8mmevk-extras.git		(branch: kirkstone)
 
 Additional optional layers handled by means of dynamic layers:
-* git://github.com/openembedded/meta-openembedded.git		(branch: dunfell)
-* git://git.openembedded.org/meta-python2				(branch: dunfell)
+* git://github.com/openembedded/meta-openembedded.git		(branch: kirkstone)
+* git://git.openembedded.org/meta-python2				(branch: kirkstone)
 
 With all the source artifacts in place, proceed with setting up the build
 using oe-init-build-env as specified in the Yocto Project wiki.
@@ -102,17 +102,17 @@ DL_DIR = "/path/to/OE/downloads"
 DISTRO ?= "imx8mmevklinux"
 PACKAGE_CLASSES ?= "package_rpm"
 EXTRA_IMAGE_FEATURES = "debug-tweaks"
-USER_CLASSES ?= "buildstats image-mklibs image-prelink"
+USER_CLASSES ?= "buildstats"
 PATCHRESOLVE = "noop"
 BB_DISKMON_DIRS = "\
     STOPTASKS,${TMPDIR},1G,100K \
     STOPTASKS,${DL_DIR},1G,100K \
     STOPTASKS,${SSTATE_DIR},1G,100K \
     STOPTASKS,/tmp,100M,100K \
-    ABORT,${TMPDIR},100M,1K \
-    ABORT,${DL_DIR},100M,1K \
-    ABORT,${SSTATE_DIR},100M,1K \
-    ABORT,/tmp,10M,1K"
+    HALT,${TMPDIR},100M,1K \
+    HALT,${DL_DIR},100M,1K \
+    HALT,${SSTATE_DIR},100M,1K \
+    HALT,/tmp,10M,1K"
 PACKAGECONFIG:append:pn-qemu-native = " sdl"
 PACKAGECONFIG:append:pn-nativesdk-qemu = " sdl"
 CONF_VERSION = "1"
