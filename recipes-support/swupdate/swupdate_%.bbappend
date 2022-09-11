@@ -12,5 +12,3 @@ do_install:append() {
     install -m 644 ${WORKDIR}/09-swupdate-args ${D}${libdir}/swupdate/conf.d/
     install -m 644 ${WORKDIR}/swupdate.cfg ${D}${sysconfdir}
 }
-
-PREFERRED_VERSION:swupdate = "2021.04+git%"
