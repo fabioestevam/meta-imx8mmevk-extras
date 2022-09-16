@@ -9,4 +9,4 @@ else
 	selection="-e stable,copy1"
 fi
 
-SWUPDATE_ARGS="-H imx8mmevk:1.0 -l 5 ${selection} -f /etc/swupdate.cfg"
+SWUPDATE_ARGS="-H imx8mmevk:1.0 -l 5 ${selection} -f /etc/swupdate.cfg -k /etc/swupdate-key.pem"

@@ -8,7 +8,7 @@ IMAGE_INSTALL:append:imx8mmevk = " \
 	kernel-modules u-boot-default-env libubootenv-bin mtd-utils \
 	ca-certificates iw dropbear iproute2 init-ifupdown \
 	i2c-tools canutils systemd-conf openssl-engines rng-tools \
-	swupdate-www swupdate-tools u-boot-fw-utils \
+	swupdate-www swupdate-tools swupdate-keys u-boot-fw-utils \
 	libdrm mesa \
 	libegl-mesa libgbm libgles1-mesa libgles2-mesa \
 	libglapi mesa-megadriver devmem2 \
