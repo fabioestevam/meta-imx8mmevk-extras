@@ -1,8 +1,4 @@
-device=`stat / | grep Device | cut -d' ' -f 2 | cut -d '/' -f 2 | cut -d 'd' -f 1`
-major=`expr $device / 256`
-minor=`expr $device % 256`
-rootfs=`udevadm info -rq name /sys/dev/block/$major:$minor`
-
+rootfs=`swupdate -g`
 if [ $rootfs == '/dev/mmcblk1p1' ];then
 	selection="-e stable,copy2"
 else
