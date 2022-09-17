@@ -12,6 +12,7 @@ software =
 						sha256 = "$swupdate_get_sha256(imx8mmevk-image-demo-@@MACHINE@@.ext4.gz)";
 						type = "raw";
 						compressed = "zlib";
+						installed-directly = true;
 						device = "/dev/mmcblk1p1";
 					}
 				);
@@ -31,6 +32,7 @@ software =
 						sha256 = "$swupdate_get_sha256(imx8mmevk-image-demo-@@MACHINE@@.ext4.gz)";
 						type = "raw";
 						compressed = "zlib";
+						installed-directly = true;
 						device = "/dev/mmcblk1p2";
 					}
 				);
