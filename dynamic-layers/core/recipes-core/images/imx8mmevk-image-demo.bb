@@ -21,8 +21,6 @@ IMAGE_INSTALL:append:imx8mmevk = " \
 	iperf3 stress-ng ethtool \
 	\
 	nano evtest libgpiod libgpiod-tools beep \
-	xprop remmina \
-	beep \
 	"
 
 IMAGE_FEATURES:append:imx8mmevk = " \
