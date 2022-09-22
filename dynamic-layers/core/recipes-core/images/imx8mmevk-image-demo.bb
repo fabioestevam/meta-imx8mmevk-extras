@@ -21,6 +21,7 @@ IMAGE_INSTALL:append:imx8mmevk = " \
 	iperf3 stress-ng ethtool \
 	\
 	nano evtest libgpiod libgpiod-tools beep \
+	freerdp \
 	"
 
 IMAGE_FEATURES:append:imx8mmevk = " \
