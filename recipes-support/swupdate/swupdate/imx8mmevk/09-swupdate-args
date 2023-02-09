@@ -1,8 +1,12 @@
 rootfs=`swupdate -g`
+
+selection="-e stable,rescue"
 if [ $rootfs == '/dev/mmcblk1p1' ];then
 	selection="-e stable,copy2"
-else
+fi
+
+if [ $rootfs == '/dev/mmcblk1p2' ];then
 	selection="-e stable,copy1"
 fi
 
-SWUPDATE_ARGS="-H imx8mmevk:1.0 -l 5 ${selection} -f /etc/swupdate.cfg -k /etc/swupdate-key.pem"
+SWUPDATE_ARGS="-H imx8mmevk:1.0 -l 5 ${selection} -f /etc/swupdate.cfg -k /etc/swupdate-key.pem -p /sbin/reboot"

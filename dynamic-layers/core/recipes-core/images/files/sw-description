@@ -4,7 +4,50 @@ software =
 
   @@MACHINE@@ = {
 		hardware-compatibility: [ "1.0"];
+
+		emmcparts: ({
+			type = "diskpart";
+			device = "/dev/mmcblk1";
+			properties: {
+				noinuse = "true";
+				nolock = "true";
+				labeltype = "gpt";
+				partition-1 = [ "size=8G", "start=20480", "fstype=ext4", "name=rootfs1"];
+				partition-2 = [ "size=8G", "fstype=ext4", "name=rootfs2"];
+			}
+		});
+
 		stable : {
+			rescue : {
+				partitions: {
+					ref = "#../../emmcparts";
+				}
+				images: (
+					{
+						filename = "u-boot-mainline-initial-env";
+						sha256 = "$swupdate_get_sha256(u-boot-mainline-initial-env)";
+						type = "bootloader";
+					},
+					{
+						filename = "@@ROOTFS_IMAGE@@-@@MACHINE@@.ext4.gz";
+						sha256 = "$swupdate_get_sha256(@@ROOTFS_IMAGE@@-@@MACHINE@@.ext4.gz)";
+						type = "raw";
+						compressed = "zlib";
+						device = "/dev/mmcblk1p1";
+					},
+				);
+				bootenv: (
+					{
+						name = "mmcpart";
+						value = "1";
+					},
+					{
+						name = "boot_recover";
+						value = "no";
+					}
+ 				);
+			};
+
 			copy1 : {
 				images: (
 					{
