@@ -7,7 +7,7 @@ inherit core-image
 IMAGE_INSTALL:append:imx8mmevk = " \
 	kernel-modules u-boot-default-env libubootenv-bin mtd-utils \
 	ca-certificates iw dropbear iproute2 init-ifupdown \
-	i2c-tools canutils systemd-conf openssl-engines rng-tools \
+	i2c-tools canutils systemd-conf openssl-engines  \
 	swupdate-www swupdate-tools swupdate-keys u-boot-fw-utils \
 	libdrm mesa \
 	libegl-mesa libgbm libgles1-mesa libgles2-mesa \
@@ -22,6 +22,7 @@ IMAGE_INSTALL:append:imx8mmevk = " \
 	\
 	nano evtest libgpiod libgpiod-tools beep \
 	freerdp \
+        v4l-utils yavta \
 	"
 
 IMAGE_FEATURES:append:imx8mmevk = " \
