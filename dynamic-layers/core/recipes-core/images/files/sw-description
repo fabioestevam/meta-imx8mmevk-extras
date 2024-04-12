@@ -24,8 +24,8 @@ software =
 				}
 				images: (
 					{
-						filename = "u-boot-mainline-initial-env";
-						sha256 = "$swupdate_get_sha256(u-boot-mainline-initial-env)";
+						filename = "u-boot-initial-env";
+						sha256 = "$swupdate_get_sha256(u-boot-initial-env)";
 						type = "bootloader";
 					},
 					{
