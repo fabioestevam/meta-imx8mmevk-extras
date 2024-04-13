@@ -16,16 +16,16 @@ IMAGE_INSTALL:append:imx8mmevk = " \
 	gstreamer1.0 gstreamer1.0-plugins-base \
 	gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
 	\
+        weston weston-init weston-examples kmscube \
 	${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'weston-xwayland', '', d)} \
 	iperf3 stress-ng ethtool \
 	\
 	nano evtest libgpiod libgpiod-tools beep \
 	freerdp \
         v4l-utils yavta \
-        plymouth \
 	"
 
 IMAGE_FEATURES:append:imx8mmevk = " \
-	dev-pkgs tools-sdk tools-debug tools-profile debug-tweaks splash \
+	dev-pkgs tools-sdk tools-debug tools-profile debug-tweaks \
 	"
 SYSTEMD_DEFAULT_TARGET:imx8mmevk = "graphical.target"
