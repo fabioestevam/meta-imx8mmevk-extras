@@ -37,7 +37,6 @@ location of the metalayers.
 
 Additional optional layers handled by means of dynamic layers:
 * git://github.com/openembedded/meta-openembedded.git		(branch: kirkstone)
-* git://git.openembedded.org/meta-python2				(branch: kirkstone)
 
 With all the source artifacts in place, proceed with setting up the build
 using oe-init-build-env as specified in the Yocto Project wiki.
@@ -48,7 +47,6 @@ be referenced in bblayers.conf in this order:
 ```
 BBLAYERS ?= " \
    /path/to/OE/poky/meta \
-   /path/to/OE/meta-python2 \
    /path/to/OE/meta-openembedded/meta-oe \
    /path/to/OE/meta-openembedded/meta-networking \
    /path/to/OE/meta-openembedded/meta-python \
