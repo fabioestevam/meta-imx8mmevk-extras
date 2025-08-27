@@ -11,7 +11,7 @@ IMAGE_INSTALL:append:imx8mmevk = " \
 	swupdate-www swupdate-tools swupdate-keys swupdate \
 	libdrm mesa \
 	libegl-mesa libgbm libgles1-mesa libgles2-mesa \
-	libglapi mesa-megadriver devmem2 \
+	mesa-megadriver devmem2 \
 	\
 	gstreamer1.0 gstreamer1.0-plugins-base \
 	gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
